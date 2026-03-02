@@ -135,58 +135,84 @@
     }
 
     /* ==== Hero ==== */
-    .hero {
-      position: relative;
-      min-height: 52vh;
-      padding: 60px 20px;
-      text-align: center;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
+.hero {
+  position: relative;
+  min-height: 52vh;
+  padding: 60px 20px;
+  text-align: center;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
 
-      /* Background image */
-      background-image: url("images/games.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-    /* Overlay for contrast */
-    .hero::before {
-      content: "";
-      position: absolute; inset: 0;
-      background: linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.45));
-    }
-    .hero > .hero-content {
-      position: relative; /* above overlay */
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .hero h2 {
-      margin: 0 0 12px;
-      font-size: clamp(2rem, 4vw + 1rem, 3rem);
-      color: #ff00e6fd;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.6);
-    }
-    .hero p {
-      font-size: 1.1rem;
-      display: inline-block;
-      padding: 8px 14px;
-      background: rgba(0,0,0,0.7);
-      border-radius: 6px;
-      margin-bottom: 16px;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 16px;
-      background: linear-gradient(45deg, #ff00e6fd, #ff00e6fd, #ff00e6fd);
-      color: #111;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 6px;
-      border: 1px solid #333;
-    }
-    .btn:hover { background: #ff00ff; }
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Animation */
+  animation: heroSlideshow 15s infinite ease-in-out;
+}
+
+/* Background image cycle */
+@keyframes heroSlideshow {
+  0% {
+    background-image: url("images/games.jpg");
+  }
+  33% {
+    background-image: url("images/image2.jpg");
+  }
+  66% {
+    background-image: url("images/image3.jpg");
+  }
+  100% {
+    background-image: url("images/games.jpg");
+  }
+}
+
+/* Overlay for contrast */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.45));
+}
+
+.hero > .hero-content {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero h2 {
+  margin: 0 0 12px;
+  font-size: clamp(2rem, 4vw + 1rem, 3rem);
+  color: #ff00e6fd;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+.hero p {
+  font-size: 1.1rem;
+  display: inline-block;
+  padding: 8px 14px;
+  background: rgba(0,0,0,0.7);
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 16px;
+  background: linear-gradient(45deg, #ff00e6fd, #ff00e6fd, #ff00e6fd);
+  color: #111;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  border: 1px solid #333;
+}
+
+.btn:hover { 
+  background: #ff00ff; 
+}
 
     /* ==== Sections ==== */
     .section { padding: 40px 20px; }
