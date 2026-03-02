@@ -101,38 +101,56 @@
     .youtube-button  { background-color: #FF0000; color: #fff; }
 
     /* ==== Nav ==== */
-    nav {
-      background: #f879ee;
-      padding: 10px 16px;
-      border-bottom: 1px solid #f879ee;
-      position: sticky;
-      top: 0;
-      z-index: 20;
-    }
-    .nav-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
+nav {
+  background: #f879ee;
+  padding: 10px 16px;
+  border-bottom: 1px solid #f879ee;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
 
-    .nav-links {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex: 1;
-    }
-    .nav-links a {
-      color: #fff;
-      font-weight: bold;
-      padding: 8px 10px;
-      border-radius: 6px;
-    }
-    .nav-links a:hover {
-      color: #111;
-      background: #f700ff;
-    }
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex: 1;
+}
+
+.nav-links a {
+  font-weight: bold;
+  padding: 8px 10px;
+  border-radius: 6px;
+}
+
+.nav-links a:hover {
+  color: #111;
+  background: #f700ff;
+}
+
+.nav-social {
+  display: flex;
+  gap: 10px;
+}
+
+.facebook-button,
+.youtube-button {
+  display: inline-block;
+  padding: 8px 14px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.facebook-button { background-color: #1877F2; }
+.youtube-button { background-color: #FF0000; }
 
     /* ==== Hero ==== */
 .hero {
@@ -310,6 +328,11 @@
       }
       .nav-links.active { display: flex; } /* shown when hamburger clicked */
     }
+    .nav-social {
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
 
     /* Desktop: ensure links always visible when hamburger is hidden */
     @media (min-width: 769px) {
