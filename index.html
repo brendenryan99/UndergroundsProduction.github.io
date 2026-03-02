@@ -48,6 +48,26 @@
       margin: 0 auto 10px auto;
       position: relative;
     }
+    
+.title-block {
+  display: flex;
+  flex-direction: column;   /* stack h1 over p */
+  align-items: flex-end;    /* right-align both h1 & p */
+  text-align: right;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 3rem;
+  color: #f879ee;
+}
+
+header p.tagline {
+  margin: 0;
+  font-size: 1rem;
+  color: #fff;
+}
+
     header h1 {
       margin: 0;
       font-size: 3rem;
@@ -371,7 +391,7 @@ nav {
               aria-controls="site-menu" aria-expanded="false" aria-label="Toggle menu">
         ☰
       </button>
-      <h1>UNDERGROUNDSPRODUCTIONS</h1><br>
+      <h1>UNDERGROUNDSPRODUCTIONS</h1>
       <p>Inspiration grows from the Roots</p>
     </div>
 
@@ -380,9 +400,15 @@ nav {
         
       </div>
 
-      <div class="header-center">
-        <p class="tagline"></p>
-      </div>
+      
+<div class="title-row">
+  <button class="menu-toggle--header">☰</button>
+  <div class="title-block">
+    <h1>UNDERGROUNDSPRODUCTIONS</h1>
+    <p class="tagline">Your tagline here</p>
+  </div>
+</div>
+
         </a>
       </div>
     </div>
