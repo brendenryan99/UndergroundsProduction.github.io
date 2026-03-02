@@ -39,22 +39,29 @@
     }
 
     /* Title row with hamburger left, title centered */
-    .title-row {
-      display: flex;
-      align-items: center;
-      justify-content: center; /* keep title visually centered */
-      gap: 12px;
-      max-width: 1100px;
-      margin: 0 auto 10px auto;
-      position: relative;
-    }
     
+.title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* pushes logo left + text right */
+  position: relative;
+  gap: 20px;
+}
+
+/* Stack h1 and p to the right */
 .title-block {
   display: flex;
-  flex-direction: column;   /* stack h1 over p */
-  align-items: flex-end;    /* right-align both h1 & p */
+  flex-direction: column;
+  align-items: flex-end; 
   text-align: right;
 }
+
+/* Style your logo */
+.header-logo {
+  height: 60px;   /* adjust size */
+  width: auto;
+}
+
 
 header h1 {
   margin: 0;
@@ -390,13 +397,23 @@ nav {
       <div class="header-left">
         
       </div>
+
 <div class="title-row">
-  <button class="menu-toggle--header">☰</button>
+  <button class="menu-toggle--header"
+          aria-controls="site-menu" aria-expanded="false" aria-label="Toggle menu">
+    ☰
+  </button>
+
+  <!-- LEFT IMAGE -->
+  <img class="header-logo" src="images/yourlogo.png" alt="Logo">
+
+  <!-- RIGHT TITLE + TAGLINE -->
   <div class="title-block">
     <h1>UNDERGROUNDSPRODUCTIONS</h1>
     <p class="tagline">Inspiration grows from the Roots</p>
   </div>
 </div>
+
 
         </a>
       </div>
