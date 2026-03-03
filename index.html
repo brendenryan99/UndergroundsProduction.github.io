@@ -158,42 +158,52 @@
     .youtube-button { background-color: #ff008c; }
 
     /* ==== Hero ==== */
-    .hero {
-      position: relative;
-      min-height: 60vh;
-      padding: 60px 20px;
-      text-align: center;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      border-bottom: 3px solid #c13df5;
-
-       background-image: url("images/band1.jpg");
-
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      animation: heroSlideshow 100s infinite ease-in-out;
-    }
-
-    @keyframes heroSlideshow {
-      0%   { background-image: url("images/band1.jpg"); }
-      20%  { background-image: url("images/art1.jpg"); }
-      40%  { background-image: url("images/band2.jpg"); }
-      60%  { background-image: url("images/art2.jpg"); }
-      80%  { background-image: url("images/band3.jpg"); }
-      100% { background-image: url("images/band1.jpg"); }
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, #f9b4ff2c, #ec8dff2c);
-    }
-
-    .hero > .hero-content {
+.hero {
   position: relative;
+  min-height: 60vh;
+  padding: 60px 20px;
+  text-align: center;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-bottom: 3px solid #c13df5;
+}
+
+/* Slides container */
+.hero-slides {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* Individual slides */
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.8s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+/* Keep your existing overlay working */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #f9b4ff2c, #ec8dff2c);
+  z-index: 1;
+}
+
+/* Make sure content stays above slides */
+.hero > .hero-content {
+  position: relative;
+  z-index: 2;
   max-width: 900px;
   margin: 0 auto;
   padding-top: 40px;
@@ -452,12 +462,26 @@ footer {
 
   <main id="main">
     <section class="hero" id="home" role="region" aria-label="Hero">
-      <div class="hero-content">
-        <h2></h2><br>
-        <p></p>
-        <h3><a href="https://www.eventbrite.com/o/undergrounds-production-104486715751" class="btn">Get Tickets to our next Event here!</a></h3>
-      </div>
-    </section>
+
+  <div class="hero-slides">
+    <img src="images/band1.jpg" class="slide active" alt="">
+    <img src="images/art1.jpg" class="slide" alt="">
+    <img src="images/band2.jpg" class="slide" alt="">
+    <img src="images/art2.jpg" class="slide" alt="">
+    <img src="images/band3.jpg" class="slide" alt="">
+  </div>
+
+  <div class="hero-content">
+    <h2></h2><br>
+    <p></p>
+    <h3>
+      <a href="https://www.eventbrite.com/o/undergrounds-production-104486715751" class="btn">
+        Get Tickets to our next Event here!
+      </a>
+    </h3>
+  </div>
+
+</section>
 
     <section class="section" id="products" aria-labelledby="products-title">
       <div class="container">
@@ -626,6 +650,17 @@ footer {
     });
   })();
 
+// Hero slideshow
+const slides = document.querySelectorAll(".slide");
+let currentSlide = 0;
+
+function nextSlide() {
+  slides[currentSlide].classList.remove("active");
+  currentSlide = (currentSlide + 1) % slides.length;
+  slides[currentSlide].classList.add("active");
+}
+
+setInterval(nextSlide, 6000);
 
   </script>
 </body>
