@@ -200,6 +200,15 @@
   }
 }
 
+/* Only affect the special slide on desktop */
+@media (min-width: 769px) {
+  .hero-slides img.special-slide {
+    object-fit: contain;  /* shows the whole image */
+    width: auto;          /* adjust width */
+    height: auto;         /* fill vertically */
+  }
+}
+
 /* Keep your existing overlay working */
 .hero::before {
   content: "";
@@ -491,7 +500,7 @@ footer {
 
   <div class="hero-slides">
     <img src="images/band1.jpg" class="slide active" alt="">
-    <img src="images/band2.jpg" class="slide" alt="">
+    <img src="images/band2.jpg" class="slide special-slide" alt="">
     <img src="images/art1.jpg" class="slide" alt="">
     <img src="images/band4.jpg" class="slide" alt="">
     <img src="images/art2.jpg" class="slide" alt="">
@@ -501,7 +510,7 @@ footer {
     <img src="images/band6.jpg" class="slide" alt="">
     <img src="images/band7.jpg" class="slide" alt="">
     <img src="images/art4.jpg" class="slide" alt="">
-    <img src="images/band2.jpg" class="slide" alt="">
+    <img src="images/band2.jpg" class="slide slide special-slide" alt="">
     <img src="images/art5.jpg" class="slide" alt="">
     <img src="images/art6.jpg" class="slide" alt="">
   </div>
