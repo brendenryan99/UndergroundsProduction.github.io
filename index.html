@@ -295,9 +295,30 @@
       cursor: pointer;
     }
 
-.video-container{
-  background: #670afcfd,
-  }
+.videos-row {
+  display: flex;
+  justify-content: center; /* centers them horizontally */
+  gap: 20px; /* space between videos */
+  flex-wrap: wrap; /* stack on mobile if too narrow */
+  margin: 40px 0;
+}
+
+.video-container {
+  position: relative;
+  width: 45%; /* adjust width per video */
+  padding-bottom: 25.3125%; /* 16:9 ratio for 45% width */
+  height: 0;
+  overflow: hidden;
+  background-color: #670afcfd, ;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
 
     /* ==== Form Styling ==== */
@@ -582,16 +603,26 @@ footer {
       </div>
     </section>
 
-    <div class="video-container">
-  <iframe
-    width="560"
-    height="315"
-    src="https://www.youtube.com/embed/BcIP7hl9hTw"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen>
-  </iframe>
+    <div class="videos-row">
+  <div class="video-container">
+    <iframe
+      src="https://www.youtube.com/embed/BcIP7hl9hTw"
+      title="About me, Christopher Ruiz."
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <div class="video-container">
+    <iframe
+      src="https://www.youtube.com/embed/W_WjgIxPkrs"
+      title="About our Jam Sessions"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
 </div>
 
     <section class="section" id="contact" aria-labelledby="contact-title">
