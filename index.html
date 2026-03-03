@@ -13,10 +13,18 @@
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background-color: #ffffff00;
+      background-color: #222;
       color: #fff;
       line-height: 1.6;
     }
+
+.page-wrapper {
+  max-width: 1600px;   /* choose your max width */
+  margin: 0 auto;      /* center it */
+  background: #222;    /* your site background */
+  min-height: 100vh;
+}
+
     img { max-width: 100%; height: auto; display: block; }
     a { color: #fff; text-decoration: none; }
     a:hover { color: #f879ee; }
@@ -476,6 +484,7 @@ footer {
 </style>
 </head>
 <body>
+  <div class="page-wrapper">
   <a href="#main" class="skip-link">Skip to content</a>
 
   <header role="banner">
@@ -787,5 +796,6 @@ function nextSlide() {
 setInterval(nextSlide, 6000);
 
   </script>
+  </div>
 </body>
 </html>
