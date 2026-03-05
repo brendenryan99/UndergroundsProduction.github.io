@@ -309,6 +309,26 @@
       cursor: pointer;
     }
 
+    /* Featured product layout */
+.product-card-featured a {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-align: left;
+}
+
+.product-card-featured img {
+  width: 180px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.product-card-featured .product-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .videos-row {
   display: flex;
   justify-content: center;
@@ -456,6 +476,21 @@ footer {
       .product-card { max-height: none; }
     }
 
+    .product-card-featured a {
+  flex-direction: column;
+  text-align: center;
+}
+
+.product-card-featured img {
+  width: 100%;
+  max-width: 250px;
+  margin: 0 auto;
+}
+
+.product-card-featured {
+  max-height: none;
+}
+
     @media (min-width: 769px) {
       .nav-links {
         display: flex;
@@ -584,14 +619,20 @@ footer {
 
     <section class="section" id="products" aria-labelledby="products-title">
       <div class="container">
-        <h2 id="products-title">Undergrounds Presents:</h2>
-        <article class="product-card" aria-labelledby="p1-title">
-            <a href="https://www.eventbrite.com/e/undergrounds-presents-holiday-grooves-tickets-1975167989627?aff=ebdsoporgprofile">
-             <h3 id="p1-title">Holiday Grooves @ KCOasis</h3>
-              <p>Sat. 12/20/25</p><br>
-            <img src="images/terriblegametour.jpg" width="250" height="200">
-           </a>
-          </article>
+        <h2 id="products-title">Undergrounds Presents: Chained Emotions</h2>
+        <article class="product-card product-card-featured" aria-labelledby="p1-title">
+  <a href="https://www.eventbrite.com/e/undergrounds-presents-chained-emotions-tickets-1983135149617?aff=ebdsoporgprofile">
+
+    <img src="images/terriblegametour.jpg" width="250" height="200">
+
+    <div class="product-info">
+      <h3 id="p1-title">Chained Emotions @ KCOasis</h3>
+      <p>Sat. 3/21/26 7pm-10:15pm</p>
+      <p>Our featured lineup blends Rap, Classical, and Rock with performances by MusicBySkippy, Matt Magerkurth, and Ramona Clay. Throughout the night, live artist Nikki Fenn will create an original piece on stage, which will be auctioned off at the end of the event through a silent auction.</p>
+    </div>
+
+  </a>
+</article>
         <p>Previous Events:</p>
         <div class="products">
           <article class="product-card" aria-labelledby="p1-title">
